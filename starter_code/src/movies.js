@@ -63,9 +63,10 @@ function bestYearAvg(arr) {
 	let greatestAvg = 0;
 	let bestYear;
 	let sortedObj = arr.reduce((acc, obj) => {
-		if (!acc[obj.year]) {
-			acc[obj.year] = [];
-		}
+		!acc[obj.year] ? (acc[obj.year] = []) : (acc[obj.year] = acc[obj.year]);
+		// if (!acc[obj.year]) {
+		// 	acc[obj.year] = [];
+		// }
 		acc[obj.year].push(obj);
 		return acc;
 	}, {});
